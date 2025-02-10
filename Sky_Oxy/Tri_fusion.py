@@ -19,8 +19,8 @@ def tri_fusion(tableau):
     if len(tableau) <= 1:
         return "Le tableau n'a qu'une seul valeur", tableau
     milieu = len(tableau) // 2
-    gauche = tri_fusion(tableau[:milieu])
-    droite = tri_fusion(tableau[milieu:])
+    gauche = tri_fusion(tableau[:milieu]) #coupure de à droite du deux po
+    droite = tri_fusion(tableau[milieu:]) #coupure de à droite du deux po
     return fusion(gauche, droite)
 
 
