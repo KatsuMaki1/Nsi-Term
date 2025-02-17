@@ -29,7 +29,7 @@ def recherche(Texte, Motif):
     return resultat
 
 
-fichier = open("c:\\Users\\truff\\OneDrive\\Bureau\\Cour\\Terminale François Mauriac France, Métropole\\Nsi\\20000 lieues sous les mers - Jules Verne.txt", "r")
+fichier = open("mettre son adresse personnel \\ 20000 lieues sous les mers - Jules Verne.txt", "r")
 contenu = fichier.read()
 fichier.close()
 
