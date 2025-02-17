@@ -9,17 +9,17 @@ def recherche(Texte, Motif):
     decalage = 0
     resultat = []
     
-    while decalage <= Ltext - Lmotif + 1:
+    while decalage <= Ltext - Lmotif:
         j = Lmotif - 1  
         
         while j >= 0 and Motif[j] == Texte[decalage + j]:
-            j = j- 1
+            j -= 1
             
         if j < 0:  # motif trouvé
             resultat.append(decalage)  # sauvegarde de la position
             
             if decalage + Lmotif < Ltext:
-                decalage = decalage + Lmotif - tab_caractere[ord(Texte[decalage + Lmotif])]
+                decalage += Lmotif - tab_caractere[ord(Texte[decalage + Lmotif])]
             else:
                 decalage += 1
         else:  # motif non trouvé, on décale
@@ -29,9 +29,11 @@ def recherche(Texte, Motif):
     return resultat
 
 
-fichier = open("20000 lieues sous les mers - Jules Verne.txt", "r")
-Texte = fichier.read() 
-Motif = "Poisson"
-positions = recherche(Texte, Motif)
-print("Le motif a été trouvé aux positions :", positions)
+fichier = open("20000 lieues sous les mers - Jules Verne", "r")
+contenu = fichier.read()
 fichier.close()
+
+
+Motif = "Poisson"
+positions = recherche(contenu, Motif)
+print("Le motif a été trouvé aux positions :", positions)
